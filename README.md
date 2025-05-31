@@ -31,6 +31,51 @@ The Boston Housing dataset is used to build and evaluate regression models that 
 
 ---
 
+## 🏡 Dataset: Boston Housing
+
+This project uses the **Boston Housing Dataset**, a classic dataset for regression tasks. It contains information collected by the U.S Census Service concerning housing in the area of Boston, Massachusetts. The goal is to predict the **median value of owner-occupied homes** (`PRICE`) based on various features.
+
+---
+
+### 📋 Features Description
+
+| Feature    | Description |
+|------------|-------------|
+| **CRIM**   | Per capita crime rate by town |
+| **ZN**     | Proportion of residential land zoned for lots over 25,000 sq. ft. |
+| **INDUS**  | Proportion of non-retail business acres per town |
+| **CHAS**   | Charles River dummy variable (1 if tract bounds river; 0 otherwise) |
+| **NOX**    | Nitric oxide concentration (parts per 10 million) |
+| **RM**     | Average number of rooms per dwelling |
+| **AGE**    | Proportion of owner-occupied units built before 1940 |
+| **DIS**    | Weighted distance to five Boston employment centers |
+| **RAD**    | Index of accessibility to radial highways |
+| **TAX**    | Property tax rate per $10,000 |
+| **PTRATIO**| Pupil-teacher ratio by town |
+| **B**      | 1000(Bk - 0.63)^2, where Bk is the proportion of Black residents |
+| **LSTAT**  | Percentage of lower status of the population |
+| **PRICE**  | *Target Variable* — Median value of owner-occupied homes (in $1000s) |
+
+---
+
+### 🧾 Sample Data (First 5 Rows)
+
+| CRIM     | ZN  | INDUS | CHAS | NOX  | RM    | AGE  | DIS   | RAD | TAX | PTRATIO | B      | LSTAT | PRICE |
+|----------|-----|--------|------|------|-------|------|--------|-----|-----|----------|--------|--------|--------|
+| 0.00632  | 18  | 2.31   | 0    | 0.538| 6.575 | 65.2 | 4.0900 | 1   | 296 | 15.3     | 396.90 | 4.98   | 24.0   |
+| 0.02731  | 0   | 7.07   | 0    | 0.469| 6.421 | 78.9 | 4.9671 | 2   | 242 | 17.8     | 396.90 | 9.14   | 21.6   |
+| 0.02729  | 0   | 7.07   | 0    | 0.469| 7.185 | 61.1 | 4.9671 | 2   | 242 | 17.8     | 392.83 | 4.03   | 34.7   |
+| 0.03237  | 0   | 2.18   | 0    | 0.458| 6.998 | 45.8 | 6.0622 | 3   | 222 | 18.7     | 394.63 | 2.94   | 33.4   |
+| 0.06905  | 0   | 2.18   | 0    | 0.458| 7.147 | 54.2 | 6.0622 | 3   | 222 | 18.7     | 396.90 | 5.33   | 36.2   |
+
+---
+
+### 🎯 Objective
+
+The primary objective is to build a machine learning model using **XGBoost Regressor** that can accurately predict housing prices based on the above features.
+
+---
+
 ## 📊 Models Implemented
 
 - Linear Regression
