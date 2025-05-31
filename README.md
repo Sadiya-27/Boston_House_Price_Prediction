@@ -22,6 +22,7 @@ The Boston Housing dataset is used to build and evaluate regression models that 
 ## 🛠️ Technologies & Libraries
 
 - **Jupyter Notebook**
+- **Streamlit** (for deploying the model as a web app)
 - Python 3.x
 - **Libraries**:
   - `pandas`, `numpy` – data handling
@@ -236,4 +237,23 @@ This example demonstrates the core idea behind **gradient boosting** used in **X
    ```bash
    git clone https://github.com/your-username/boston-house-price-xgboost.git
    cd boston-house-price-xgboost
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Open the notebook**:
+   ```bash
+   jupyter notebook Boston_House_Price_Prediction.ipynb
+   ```
+
+4. **Run Streamlit app**:
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+---
+
+> ⭐ If you found this project helpful, give it a star!
 
