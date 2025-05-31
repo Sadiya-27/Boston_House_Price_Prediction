@@ -108,6 +108,82 @@ Error Calculation: It then calculates the residuals, which are the differences b
    XGBoost adds trees until a certain stopping criteria is met. These criteria could be a maximum number of trees, a minimum improvement in the loss function, or reaching a certain level of accuracy.
 
 ---
+## 📘 Example: Understanding How XGBoost Works (Simplified)
+
+Let’s consider a toy dataset with one feature (`RM` - number of rooms) and corresponding house prices.
+
+### Dataset
+
+| RM (x) | Price (y) |
+|--------|-----------|
+| 4      | 200       |
+| 5      | 250       |
+| 6      | 300       |
+| 7      | 350       |
+
+---
+
+### Step 1: Initial Prediction
+
+Start with the mean of `y` as the initial prediction:
+
+**Initial Prediction (f₀):**
+y_mean = (200 + 250 + 300 + 350) / 4 = 275
+
+
+| x | Actual y | f₀(x) | Residual = y - f₀(x) |
+|---|----------|-------|----------------------|
+| 4 | 200      | 275   | -75                  |
+| 5 | 250      | 275   | -25                  |
+| 6 | 300      | 275   | +25                  |
+| 7 | 350      | 275   | +75                  |
+
+---
+
+### Step 2: Train Tree on Residuals
+
+**Tree 1 Logic (simple):**
+- If RM ≤ 5 → output = -50  
+- If RM > 5 → output = +50
+
+---
+
+### Step 3: Update Predictions
+
+**Learning rate (η) = 0.1**
+
+**Updated Prediction (f₁):**
+f₁(x) = f₀(x) + η * Tree₁(x)
+
+| x | f₀(x) | Tree₁(x) | f₁(x) |
+|---|-------|----------|--------|
+| 4 | 275   | -50      | 270    |
+| 5 | 275   | -50      | 270    |
+| 6 | 275   | +50      | 280    |
+| 7 | 275   | +50      | 280    |
+
+---
+
+### Step 4: Compute New Residuals
+
+| x | y | f₁(x) | New Residual |
+|---|---|--------|--------------|
+| 4 | 200 | 270  | -70          |
+| 5 | 250 | 270  | -20          |
+| 6 | 300 | 280  | +20          |
+| 7 | 350 | 280  | +70          |
+
+Repeat this process with new trees and residuals to refine the predictions further.
+
+---
+
+### 🔁 Final Model (after n trees):
+
+f(x) = f₀(x) + η * tree₁(x) + η * tree₂(x) + ... + η * treeₙ(x)
+
+This example demonstrates the core idea behind **gradient boosting** used in **XGBoost**.
+
+---
 
 ## 🧪 How to Run
 
