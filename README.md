@@ -4,6 +4,9 @@
 
 This project is an interactive and educational notebook that demonstrates how to predict house prices using machine learning models, with a focus on the **XGBoost Regressor**. The notebook includes both code and theoretical explanations, making it perfect for learners and practitioners.
 
+## Deployed Project Link:
+https://bostonhousepriceprediction-ml.streamlit.app/
+
 ---
 
 ## 📘 Project Description
